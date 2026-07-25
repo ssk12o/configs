@@ -1,0 +1,110 @@
+# ----------------------------
+# Window
+# ----------------------------
+[window]
+padding = { x = 8, y = 4 }
+dynamic_padding = true
+decorations = "Full"
+opacity = 0.95
+blur = true
+startup_mode = "Windowed"
+
+# ----------------------------
+# Scrolling
+# ----------------------------
+[scrolling]
+history = 100000
+multiplier = 3
+
+# ----------------------------
+# Font
+# ----------------------------
+[font]
+size = 10
+
+[font.normal]
+family = "JetBrainsMono Nerd Font Mono"
+style = "SemiBold"
+
+[font.bold]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Bold"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Italic"
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Bold Italic"
+
+# ----------------------------
+# Cursor
+# ----------------------------
+[cursor]
+style = { shape = "Block", blinking = "On" }
+blink_interval = 500
+blink_timeout = 0
+unfocused_hollow = false
+
+# ----------------------------
+# Mouse
+# ----------------------------
+[mouse]
+hide_when_typing = true
+
+# ----------------------------
+# Selection
+# ----------------------------
+[selection]
+save_to_clipboard = true
+
+# ----------------------------
+# Bell
+# ----------------------------
+[bell]
+animation = "EaseOutExpo"
+duration = 0
+command = "None"
+
+# ----------------------------
+# Tokyo Night Colors
+# ----------------------------
+[colors.primary]
+background = "#1a1b26"
+foreground = "#c0caf5"
+
+[colors.cursor]
+text = "#1a1b26"
+cursor = "#c0caf5"
+
+[colors.selection]
+text = "CellForeground"
+background = "#33467c"
+
+[colors.normal]
+black = "#15161e"
+red = "#f7768e"
+green = "#9ece6a"
+yellow = "#e0af68"
+blue = "#7aa2f7"
+magenta = "#bb9af7"
+cyan = "#7dcfff"
+white = "#a9b1d6"
+
+[colors.bright]
+black = "#414868"
+red = "#f7768e"
+green = "#9ece6a"
+yellow = "#e0af68"
+blue = "#7aa2f7"
+magenta = "#bb9af7"
+cyan = "#7dcfff"
+white = "#c0caf5"
+
+# ----------------------------
+# Hints
+# ----------------------------
+[hints]
+alphabet = "jfkdls;ahgurieowpq"
+
