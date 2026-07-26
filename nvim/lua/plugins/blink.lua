@@ -8,11 +8,11 @@ return {
       ["<C-k>"] = { "select_prev", "fallback" },
       ["<C-l>"] = { "accept", "fallback" },
 
-      ["<Tab>"] = { "select_next", "fallback" },
-      ["<C-Tab>"] = { "select_prev", "fallback" },
+      ["<Tab>"] = { "accept", "fallback" },
+      -- ["<C-Tab>"] = { "select_prev", "fallback" },
 
       ["<C-Space>"] = { "show", "show_documentation", "hide_documentation" },
-      ["<CR>"] = { "accept", "fallback" },
+      -- ["<CR>"] = { "accept", "fallback" },
     },
     completion = {
       menu = {
