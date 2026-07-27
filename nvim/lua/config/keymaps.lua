@@ -2,7 +2,15 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
+-- Jump form insert mode to normal mode after typing twice...
 vim.keymap.set("i", ";;", "<C-o>", { desc = "Normal mode single operation" })
+
+-- Rebinding of hopping between buffers
+vim.keymap.del("n", "<C-j>")
+vim.keymap.del("n", "<C-k>")
+
+vim.keymap.set("n", "<C-j>", "]b", { remap = true, desc = "Next Buffer" })
+vim.keymap.set("n", "<C-k>", "[b", { remap = true, desc = "Previous Buffer" })
 
 -- vim.keymap.set("i", ";", function()
 --   local line = vim.api.nvim_get_current_line()
