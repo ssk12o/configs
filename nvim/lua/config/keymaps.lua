@@ -9,8 +9,8 @@ vim.keymap.set("i", ";;", "<C-o>", { desc = "Normal mode single operation" })
 vim.keymap.del("n", "<C-j>")
 vim.keymap.del("n", "<C-k>")
 
-vim.keymap.set("n", "<C-j>", "]b", { remap = true, desc = "Next Buffer" })
-vim.keymap.set("n", "<C-k>", "[b", { remap = true, desc = "Previous Buffer" })
+vim.keymap.set("n", "<C-k>", "]b", { remap = true, desc = "Next Buffer" })
+vim.keymap.set("n", "<C-j>", "[b", { remap = true, desc = "Previous Buffer" })
 
 -- vim.keymap.set("i", ";", function()
 --   local line = vim.api.nvim_get_current_line()
