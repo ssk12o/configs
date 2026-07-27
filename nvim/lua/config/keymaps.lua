@@ -78,7 +78,7 @@ vim.keymap.set("i", "<CR>", function()
   local line = vim.api.nvim_get_current_line()
   local trimmed = line:match("^(.-)%s*$")
 
-  if trimmed ~= "" and trimmed:sub(-1) ~= ";" then
+  if trimmed ~= "" and trimmed:sub(-1) ~= ";" and trimmed:sub(-1) ~= "{" and trimmed:sub(-1) ~= "}" then
     return "<C-o>A;<CR>"
   end
 
