@@ -37,7 +37,7 @@ local semicolon_langs = {
   "typescriptreact",
   "rust",
   "go",
-  "csharp",
+  "cs",
   "php",
   "swift",
   "kotlin",
