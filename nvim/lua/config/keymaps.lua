@@ -70,6 +70,12 @@ end
 --   desc = "Smart semicolon (semicolon languages only)"
 -- })
 
+-- Otwieranie klamer i przejście do nowej linii po Enter
+vim.keymap.set("i", "{<CR>", "{<CR>}<Esc>O", {
+  expr = false,
+  desc = "Open curly braces on separate lines",
+})
+
 vim.keymap.set("i", "<CR>", function()
   if not uses_semicolons() then
     return "<CR>"

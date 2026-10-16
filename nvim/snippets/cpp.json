@@ -1,0 +1,14 @@
+{
+  "Ifndef pragma macro": {
+    "prefix": ["#pragma", "pragma", "#ifndef", "ifndef"],
+    "description": "Ifndef pragma once macro",
+    "body": [
+            "#ifndef $1",
+            "#define $1",
+            "",
+            "$2",
+            "",
+            "#endif $1"
+    ]
+  },
+}

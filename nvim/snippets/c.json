@@ -1,0 +1,44 @@
+{
+  "my_Ifndef pragma macro": {
+    "prefix": [
+      "#pragma",
+      "pragma",
+      "#ifndef",
+      "ifndef"
+    ],
+    "description": "Ifndef pragma once macro",
+    "body": [
+      "#ifndef $1",
+      "#define $1",
+      "",
+      "$2",
+      "",
+      "#endif $1"
+    ]
+  },
+  "my_Function": {
+    "prefix": [
+      "fn"
+    ],
+    "description": "Function definition",
+    "body": [
+      "${1:void} ${2:function_name}(${3:void})",
+      "{",
+      "\t$0",
+      "}"
+    ]
+  },
+  "my_Struct": {
+    "prefix": [
+      "struct",
+      "typedef struct"
+    ],
+    "description": "my struct definition",
+    "body": [
+      "typedef struct",
+      "{",
+      "\t$1",
+      "} ${0:Name};"
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+    "name": "personal-snippets",
+    "contributes": {
+        "snippets": [
+            {
+                "language": "svelte",
+                "path": "./svelte.json"
+            },
+            {
+                "language": "c",
+                "path": "./c.json"
+            },
+            {
+                "language": "cpp",
+                "path": "./cpp.json"
+            },
+            {
+                "language": "hpp",
+                "path": "./cpp.json"
+            }
+        ]
+    }
+}
