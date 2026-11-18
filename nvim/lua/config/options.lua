@@ -9,3 +9,5 @@ opt.shiftwidth = 4
 opt.expandtab = true
 opt.signcolumn = "yes"
 opt.cursorline = true
+
+vim.g.vimtex_view_method = "zathura_simple"
