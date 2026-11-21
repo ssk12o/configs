@@ -17,6 +17,14 @@
             {
                 "language": "hpp",
                 "path": "./cpp.json"
+            },
+            {
+                "language": [
+                    "tex",
+                    "latex",
+                    "plaintex"
+                ],
+                "path": "./tex.json"
             }
         ]
     }
