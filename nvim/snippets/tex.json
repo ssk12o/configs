@@ -97,6 +97,28 @@
             "\\end{uwaga}"
         ]
     },
+    "Itemize": {
+        "prefix": "bit",
+        "body": [
+            "\\begin{itemize}",
+            "\t\\item $0",
+            "\\end{itemize}"
+        ]
+    },
+    "Enumerate": {
+        "prefix": "ben",
+        "body": [
+            "\\begin{enumerate}",
+            "\t\\item $0",
+            "\\end{enumerate}"
+        ]
+    },
+    "Item": {
+        "prefix": "it",
+        "body": [
+            "\\item $0"
+        ]
+    },
     "Templatko ma!": {
         "prefix": "templatka",
         "body": [
