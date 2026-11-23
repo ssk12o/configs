@@ -10,4 +10,6 @@ opt.expandtab = true
 opt.signcolumn = "yes"
 opt.cursorline = true
 
+vim.opt.spelllang = { "pl", "en_gb" }
+
 vim.g.vimtex_view_method = "zathura_simple"

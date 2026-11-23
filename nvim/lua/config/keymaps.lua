@@ -12,6 +12,28 @@ vim.keymap.del("n", "<C-k>")
 vim.keymap.set("n", "<C-k>", "]b", { remap = true, desc = "Next Buffer" })
 vim.keymap.set("n", "<C-j>", "[b", { remap = true, desc = "Previous Buffer" })
 
+-- Fixing typos
+vim.keymap.set("i", "<C-l>", "<c-g>u<Esc>[s1z=`]a<c-g>u", { desc = "Fix previous spelling mistake" })
+
+vim.keymap.set("i", "<C-k>", function()
+  vim.cmd("stopinsert")
+  vim.cmd("normal! [s")
+  Snacks.picker.spelling()
+end, { desc = "Pick suggestion for previous error" })
+
+vim.keymap.set("n", "<leader>zp", "[s1z=``", { desc = "Fix previous spelling error" })
+vim.keymap.set("n", "<leader>zn", "]s1z=``", { desc = "Fix next spelling error" })
+
+vim.keymap.set("n", "<leader>zs", function()
+  Snacks.picker.spelling()
+end, { desc = "Spell suggestions" })
+
+-- skocz do poprzedniego błędu i pokaż sugestie
+vim.keymap.set("n", "<leader>zl", function()
+  vim.cmd("normal! [s")
+  Snacks.picker.spelling()
+end, { desc = "Previous error + suggestions" })
+
 -- vim.keymap.set("i", ";", function()
 --   local line = vim.api.nvim_get_current_line()
 --   local trimmed = line:match("^(.-)%s*$")

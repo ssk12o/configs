@@ -13,3 +13,11 @@ vim.filetype.add({
     xaml = "xml",
   },
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "markdown", "text", "gitcommit", "tex" },
+  callback = function()
+    vim.opt_local.spell = true
+    vim.opt_local.spelllang = { "pl", "en_gb" }
+  end,
+})
