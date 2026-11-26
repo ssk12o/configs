@@ -119,6 +119,12 @@
             "\\item $0"
         ]
     },
+    "Wyprowadza": {
+        "prefix": "wyp",
+        "body": [
+            "\\underset{$1}{\\overset{$2}{\\implies}}$0"
+        ]
+    },
     "Templatko ma!": {
         "prefix": "templatka",
         "body": [
@@ -143,7 +149,7 @@
             "\\setlist{itemsep=2pt, topsep=4pt}",
             "\\pagestyle{fancy}",
             "\\fancyhf{}",
-            "\\fancyhead[L]{\\sffamily\\small ${1:Title}}",
+            "\\fancyhead[L]{\\sffamily\\small ${3:Title}}",
             "\\fancyhead[R]{\\sffamily\\small\\color{kolMu}\\nouppercase{\\leftmark}}",
             "\\fancyfoot[C]{\\sffamily\\small\\color{kolMu}\\thepage}",
             "\\renewcommand{\\headrulewidth}{0.8pt}",
@@ -320,8 +326,8 @@
             "\\newcommand{\\n}{\\mathbb{N}}",
             "\\newcommand{\\z}{\\mathbb{Z}}",
             "\\newcommand{\\q}{\\mathbb{Q}}",
-            "\\newcommand{\\r}{\\mathbb{R}}",
-            "\\newcommand{\\c}{\\mathbb{C}}",
+            "% \\newcommand{\\r}{\\mathbb{R}}",
+            "% \\newcommand{\\c}{\\mathbb{C}}",
             "",
             "% % Podstawowe symbole",
             "% \\newcommand{\\eps}{\\varepsilon}                   % słowo puste",
