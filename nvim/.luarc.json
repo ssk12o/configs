@@ -1,0 +1,29 @@
+{
+    "diagnostics": {
+        "globals": [
+            "ls",
+            "s",
+            "sn",
+            "t",
+            "i",
+            "f",
+            "c",
+            "d",
+            "r",
+            "isn",
+            "fmt",
+            "fmta",
+            "rep",
+            "l",
+            "p",
+            "m",
+            "n",
+            "dl",
+            "in_mathzone",
+            "not_in_mathzone",
+            "get_visual",
+            "in_text",
+            "line_begin_or_non_letter"
+        ]
+    }
+}
