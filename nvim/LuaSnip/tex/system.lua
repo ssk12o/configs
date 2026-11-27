@@ -1,75 +1,7 @@
 local tex = require("luasnip-helper")
 local get_visual = tex.get_visual
 
--- Return snippet tables
 return {
-  -- -- ANNOTATE (custom command for annotating equation derivations)
-  -- s(
-  --   { trig = "ann", snippetType = "autosnippet" },
-  --   fmta(
-  --     [[
-  --     \annotate{<>}{<>}
-  --     ]],
-  --     {
-  --       i(1),
-  --       d(2, get_visual),
-  --     }
-  --   )
-  -- ),
-  -- -- REFERENCE
-  -- s(
-  --   { trig = " RR", snippetType = "autosnippet", wordTrig = false },
-  --   fmta(
-  --     [[
-  --     ~\ref{<>}
-  --     ]],
-  --     {
-  --       d(1, get_visual),
-  --     }
-  --   )
-  -- ),
-  -- -- DOCUMENTCLASS
-  -- s(
-  --   { trig = "dcc", snippetType = "autosnippet" },
-  --   fmta(
-  --     [=[
-  --       \documentclass[<>]{<>}
-  --       ]=],
-  --     {
-  --       i(1, "a4paper"),
-  --       i(2, "article"),
-  --     }
-  --   ),
-  --   { condition = tex.line_begin }
-  -- ),
-  -- -- USE A LATEX PACKAGE
-  -- s(
-  --   { trig = "pack", snippetType = "autosnippet" },
-  --   fmta(
-  --     [[
-  --       \usepackage{<>}
-  --       ]],
-  --     {
-  --       d(1, get_visual),
-  --     }
-  --   ),
-  --   { condition = tex.line_begin }
-  -- ),
-  -- -- INPUT a LaTeX file
-  -- s(
-  --   { trig = "inn", snippetType = "autosnippet" },
-  --   fmta(
-  --     [[
-  --     \input{<><>}
-  --     ]],
-  --     {
-  --       i(1, "~/dotfiles/config/latex/templates/"),
-  --       i(2),
-  --     }
-  --   ),
-  --   { condition = tex.line_begin }
-  -- ),
-  -- -- LABEL
   s(
     { trig = "lbl", snippetType = "autosnippet" },
     fmta(
@@ -81,93 +13,50 @@ return {
       }
     )
   ),
-  -- -- HPHANTOM
-  -- s(
-  --   { trig = "hpp", snippetType = "autosnippet" },
-  --   fmta(
-  --     [[
-  --     \hphantom{<>}
-  --     ]],
-  --     {
-  --       d(1, get_visual),
-  --     }
-  --   )
-  -- ),
-  -- s(
-  --   { trig = "TODOO", snippetType = "autosnippet" },
-  --   fmta([[\TODO{<>}]], {
-  --     d(1, get_visual),
-  --   })
-  -- ),
-  -- s(
-  --   { trig = "nc" },
-  --   fmta([[\newcommand{<>}{<>}]], {
-  --     i(1),
-  --     i(2),
-  --   }),
-  --   { condition = tex.line_begin }
-  -- ),
-  -- s(
-  --   { trig = "sii", snippetType = "autosnippet" },
-  --   fmta([[\si{<>}]], {
-  --     i(1),
-  --   })
-  -- ),
-  -- s(
-  --   { trig = "qtt" },
-  --   fmta([[\qty{<>}{<>}]], {
-  --     i(1),
-  --     i(2),
-  --   })
-  -- ),
-  -- -- URL
   s(
     { trig = "url" },
     fmta([[\url{<>}]], {
       d(1, get_visual),
     })
   ),
-  -- href command with URL in visual selection
   s(
     { trig = "href", snippetType = "autosnippet" },
     fmta([[\href{<>}{<>}]], {
-      d(1, "addres"),
-      i(2, "text", get_visual),
+      i(1, "addres"),
+      d(2, get_visual),
     })
   ),
-  -- HSPACE
   s(
     { trig = "hss", snippetType = "autosnippet" },
     fmta([[\hspace{<>}]], {
       d(1, get_visual),
     })
   ),
-  -- VSPACE
   s(
     { trig = "vss", snippetType = "autosnippet" },
     fmta([[\vspace{<>}]], {
       d(1, get_visual),
     })
   ),
-  -- SECTION
   s(
     { trig = "h1", snippetType = "autosnippet" },
     fmta([[\section{<>}]], {
       d(1, get_visual),
-    })
+    }),
+    { condition = tex.line_begin }
   ),
-  -- SUBSECTION
   s(
     { trig = "h2", snippetType = "autosnippet" },
     fmta([[\subsection{<>}]], {
       d(1, get_visual),
-    })
+    }),
+    { condition = tex.line_begin }
   ),
-  -- SUBSUBSECTION
   s(
     { trig = "h3", snippetType = "autosnippet" },
     fmta([[\subsubsection{<>}]], {
       d(1, get_visual),
-    })
+    }),
+    { condition = tex.line_begin }
   ),
 }

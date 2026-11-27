@@ -3,7 +3,7 @@
 -- Add any additional keymaps here
 
 -- Jump form insert mode to normal mode after typing twice...
-vim.keymap.set("i", ";;", "<C-o>", { desc = "Normal mode single operation" })
+-- vim.keymap.set("i", ";;", "<C-o>", { desc = "Normal mode single operation" })
 
 -- Rebinding of hopping between buffers
 vim.keymap.del("n", "<C-j>")
@@ -28,7 +28,6 @@ vim.keymap.set("n", "<leader>zs", function()
   Snacks.picker.spelling()
 end, { desc = "Spell suggestions" })
 
--- skocz do poprzedniego błędu i pokaż sugestie
 vim.keymap.set("n", "<leader>zl", function()
   vim.cmd("normal! [s")
   Snacks.picker.spelling()

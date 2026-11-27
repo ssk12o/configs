@@ -36,9 +36,6 @@ return {
   s({ trig = "inf", snippetType = "autosnippet" }, {
     t("\\infty"),
   }, { condition = tex.in_mathzone }),
-  s({ trig = "ii", snippetType = "autosnippet" }, {
-    t("\\item "),
-  }, { condition = line_begin }),
   s(
     { trig = "--", snippetType = "autosnippet" },
     { t("% --------------------------------------------- %") },
