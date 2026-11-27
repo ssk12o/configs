@@ -36,6 +36,12 @@ return {
     fmta("\\underset{<>}{\\overset{<>}{\\implies}} <>", { i(1), i(2), i(0) }),
     { condition = tex.in_mathzone }
   ),
+  s({ trig = "to", snippetType = "autosnippet" }, {
+    t("\\to"),
+  }, { condition = tex.in_mathzone }),
+  s({ trig = "im", snippetType = "autosnippet" }, {
+    t("\\implies"),
+  }, { condition = tex.in_mathzone }),
 
   s(
     { trig = "baut", snippetType = "autosnippet", dscr = "Automat TikZ" },
