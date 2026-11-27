@@ -2,12 +2,69 @@ local tex = require("luasnip-helper")
 
 -- Return snippet tables
 return {
+
+  s({ trig = "in", snippetType = "autosnippet" }, {
+    t("\\in "),
+  }, { condition = tex.in_mathzone }),
+
+  s({ trig = "hat", snippetType = "autosnippet" }, fmta("\\hat{<>}", { i(1) }), { condition = tex.in_mathzone }),
+
+  s({ trig = "inf", snippetType = "autosnippet" }, {
+    t("\\infty"),
+  }, { condition = tex.in_mathzone }),
+
+  s({ trig = "cap", snippetType = "autosnippet" }, {
+    t("\\cap "),
+  }, { condition = tex.in_mathzone }),
+
+  s({ trig = "cup", snippetType = "autosnippet" }, {
+    t("\\cup "),
+  }, { condition = tex.in_mathzone }),
+
+  s({ trig = "neq", snippetType = "autosnippet" }, {
+    t("\\neq "),
+  }, { condition = tex.in_mathzone }),
+  s({ trig = "null", snippetType = "autosnippet" }, {
+    t("\\emptyset"),
+  }, { condition = tex.in_mathzone }),
+
+  s({ trig = "wtw", snippetType = "autosnippet" }, {
+    t("\\Leftrightarrow"),
+  }, { condition = tex.in_mathzone }),
   s(
-    { trig = " wyp", snippetType = "autosnippet" },
-    fmta("\\underset{<>}{\\overset{<>}{\\implies}}<>", { i(1), i(2), i(0) }),
+    { trig = "wyp", snippetType = "autosnippet" },
+    fmta("\\underset{<>}{\\overset{<>}{\\implies}} <>", { i(1), i(2), i(0) }),
     { condition = tex.in_mathzone }
   ),
 
+  s(
+    { trig = "baut", snippetType = "autosnippet", dscr = "Automat TikZ" },
+    fmta(
+      [[
+        \begin{center}
+        \begin{tikzpicture}[automat]
+          \node[state, initial] (q0) {$q_0$};
+          <>
+
+          \path[->>]
+            (q0) edge node {$<>$} (<>);
+        \end{tikzpicture}
+        \end{center}
+      ]],
+      { i(1), i(2), i(3) }
+    ),
+    { condition = tex.line_begin }
+  ),
+
+  s(
+    { trig = "([%w%)%]%}]),", wordTrig = false, regTrig = true, snippetType = "autosnippet" },
+    fmta("<>,\\ ", {
+      f(function(_, snip)
+        return snip.captures[1]
+      end),
+    }),
+    { condition = tex.in_mathzone }
+  ),
   -- SUPERSCRIPT
   s(
     { trig = "([%w%)%]%}])'", wordTrig = false, regTrig = true, snippetType = "autosnippet" },

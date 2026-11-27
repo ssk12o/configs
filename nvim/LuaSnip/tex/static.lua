@@ -33,9 +33,6 @@ return {
   -- s({ trig = "toc", snippetType = "autosnippet" }, {
   --   t("\\tableofcontents"),
   -- }, { condition = line_begin }),
-  s({ trig = "inf", snippetType = "autosnippet" }, {
-    t("\\infty"),
-  }, { condition = tex.in_mathzone }),
   s(
     { trig = "--", snippetType = "autosnippet" },
     { t("% --------------------------------------------- %") },

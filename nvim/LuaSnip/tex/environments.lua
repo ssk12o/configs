@@ -2,6 +2,110 @@ local tex = require("luasnip-helper")
 local get_visual = tex.get_visual
 
 return {
+  -- INLINE MATH
+  s(
+    { trig = "([^%l])mm", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
+    fmta("<>$<>$", {
+      f(function(_, snip)
+        return snip.captures[1]
+      end),
+      d(1, get_visual),
+    })
+  ),
+  -- INLINE MATH ON NEW LINE
+  s(
+    { trig = "^mm", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
+    fmta("$<>$", {
+      i(1),
+    })
+  ),
+
+  -- GENERIC ENVIRONMENT
+  s(
+    { trig = "beg", snippetType = "autosnippet" },
+    fmta(
+      [[
+        \begin{<>}
+            <>
+        \end{<>}
+      ]],
+      {
+        i(1),
+        d(2, get_visual),
+        rep(1),
+      }
+    ),
+    { condition = tex.line_begin }
+  ),
+  -- EQUATION
+  s(
+    { trig = "beq", snippetType = "autosnippet" },
+    fmta(
+      [[
+        \begin{equation*}
+            <>
+        \end{equation*}
+      ]],
+      {
+        i(1),
+      }
+    ),
+    { condition = tex.line_begin }
+  ),
+  -- SPLIT EQUATION
+  s(
+    { trig = "ss", snippetType = "autosnippet" },
+    fmta(
+      [[
+        \begin{equation*}
+            \begin{split}
+                <>
+            \end{split}
+        \end{equation*}
+      ]],
+      {
+        d(1, get_visual),
+      }
+    ),
+    { condition = tex.line_begin }
+  ),
+  -- ALIGN
+  s(
+    { trig = "all", snippetType = "autosnippet" },
+    fmta(
+      [[
+        \begin{align*}
+            <>
+        \end{align*}
+      ]],
+      {
+        i(1),
+      }
+    ),
+    { condition = tex.line_begin }
+  ),
+  -- FIGURE
+  s(
+    { trig = "fig" },
+    fmta(
+      [[
+        \begin{figure}[htb!]
+          \centering
+          \includegraphics[width=<>\linewidth]{<>}
+          \caption{<>}
+          \label{fig:<>}
+        \end{figure}
+        ]],
+      {
+        i(1),
+        i(2),
+        i(3),
+        i(4),
+      }
+    ),
+    { condition = tex.line_begin }
+  ),
+
   s(
     { trig = "btw", snippetType = "autosnippet" },
     fmta(

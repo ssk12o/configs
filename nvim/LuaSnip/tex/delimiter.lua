@@ -5,7 +5,7 @@ local get_visual = tex.get_visual
 return {
   -- LEFT/RIGHT PARENTHESES
   s(
-    { trig = "([^%a])lcc", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
+    { trig = "([^%a])lpp", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
     fmta("<>\\left(<>\\right)", {
       f(function(_, snip)
         return snip.captures[1]
@@ -35,7 +35,7 @@ return {
   ),
   -- BIG PARENTHESES
   s(
-    { trig = "([^%a])bcc", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
+    { trig = "([^%a])bpp", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
     fmta("<>\\big(<>\\big)", {
       f(function(_, snip)
         return snip.captures[1]
